@@ -6,20 +6,17 @@ ACCESSTOKEN=$SM_ACCESS_TOKEN
 
 if [ -z "$ACCESSTOKEN" ]
   then
-    echo "Please add a Survey Monkey access token to your environment variables, i.e. export SM_ACCESS_TOKEN=access-token"
-    exit
+    echo "Please add a Survey Monkey access token to your environment variables, i.e. export SM_ACCESS_TOKEN=access-token" && exit 1
 fi
 
 if [ -z "$1" ]
   then
-    echo "Survey ID required"
-    exit
+    echo "Survey ID required" && exit 1
 fi
 
 if [ -z "$2" ]
   then
-    echo "Page ID required"
-    exit
+    echo "Page ID required" && exit 1
 fi
 
 curl --request GET \
